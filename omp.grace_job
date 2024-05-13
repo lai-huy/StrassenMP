@@ -1,0 +1,25 @@
+#!/bin/bash
+#SBATCH --job-name=JobExample   #Set the job name to "JobExample"
+#SBATCH --time=1:30:00          #Set the wall clock limit in hr:min:sec
+#SBATCH --mem=128G              #Request 128GB per node
+#SBATCH --nodes=1               #Request 1 node
+#SBATCH --ntasks-per-node=8     #Request 8 tasks/cores per node
+#SBATCH --output=strassen.txt   #Send stdout/err to "output.[jobID]"
+#
+#
+#
+#
+#
+module load intel
+#
+#
+export OMP_PLACES=sockets
+export OMP_PROC_BIND=true
+./main.out 10 32 1
+./main.out 10 32 2
+./main.out 10 32 4
+./main.out 10 32 8
+./main.out 10 32 16
+./main.out 10 32 32
+./main.out 10 32 64
+

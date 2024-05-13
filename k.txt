@@ -1,0 +1,7 @@
+Time: 0.027394
+Time: 0.026947
+Time: 0.012144
+Time: 0.802367
+slurmstepd: error: poll(): Bad address
+/var/spool/slurmd/job10206636/slurm_script: line 22: 33135 Killed                  ./main.out 16 2 8
+Time: 0.011736
